@@ -17,33 +17,34 @@
 //   },
 // };
 
+// ------------------------------------------------------
+// 🔥 Détection automatique : local vs production
+// ------------------------------------------------------
+const IS_LOCAL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1" ||
+  window.location.hostname.startsWith("192.168.");
 
-// // URL pour dev local
-// const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
+// ------------------------------------------------------
+// 🌍 URLs Backend
+// ------------------------------------------------------
+const LOCAL_BASE_URL = "http://192.168.1.189:8000"; // Django local
+const PROD_BASE_URL = "https://badospace.onrender.com"; // Backend Render
 
-// // URL pour prod (Render)
-// const PROD_BASE_URL = "https://badospace.onrender.com/api";
+// 👉 Choix automatique
+const BASE_URL = IS_LOCAL ? LOCAL_BASE_URL : PROD_BASE_URL;
 
-// // true = dev local, false = production
-// const DEV = false;
-
-// // Choix automatique de l'URL selon l'environnement
-// const BASE_URL = DEV ? LOCAL_BASE_URL : PROD_BASE_URL;
-
-// export default {
-//   BASE_URL,
-//   ENDPOINTS: {
-//     MESSAGES: `${BASE_URL}/messages/`,
-//     CONVERSATIONS: `${BASE_URL}/conversations/`,
-//   },
-// };
-
-const BASE_URL = "https://badospace.onrender.com/api";
-
-export default {
+// ------------------------------------------------------
+// 📌 ENDPOINTS API
+// ------------------------------------------------------
+const CONFIG = {
   BASE_URL,
-  ENDPOINTS: {
-    MESSAGES: `${BASE_URL}/messages/`,
-    CONVERSATIONS: `${BASE_URL}/conversations/`,
-  },
+
+  // 💬 Chat
+  API_MESSAGES: `${BASE_URL}/api/messages/`,
+  API_CONVERSATIONS: `${BASE_URL}/api/conversations/`,
+
+  // Tu peux ajouter ici les autres endpoints si tu veux plus tard
 };
+
+export default CONFIG;
