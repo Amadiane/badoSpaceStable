@@ -1,5 +1,5 @@
 // config.ts
-const DEV = true; // true = développement local, false = production
+const DEV = false; // true = développement local, false = production
 
 // 🔹 URL de ton backend local (Django)
 const LOCAL_BASE_URL = "http://192.168.1.189:8000/api"; // remplace par ton IP PC si tu testes sur téléphone
