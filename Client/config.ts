@@ -18,17 +18,27 @@
 // };
 
 
-// URL pour dev local
-const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
+// // URL pour dev local
+// const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
 
-// URL pour prod (Render)
-const PROD_BASE_URL = "https://badospace.onrender.com/api";
+// // URL pour prod (Render)
+// const PROD_BASE_URL = "https://badospace.onrender.com/api";
 
-// true = dev local, false = production
-const DEV = false;
+// // true = dev local, false = production
+// const DEV = false;
 
-// Choix automatique de l'URL selon l'environnement
-const BASE_URL = DEV ? LOCAL_BASE_URL : PROD_BASE_URL;
+// // Choix automatique de l'URL selon l'environnement
+// const BASE_URL = DEV ? LOCAL_BASE_URL : PROD_BASE_URL;
+
+// export default {
+//   BASE_URL,
+//   ENDPOINTS: {
+//     MESSAGES: `${BASE_URL}/messages/`,
+//     CONVERSATIONS: `${BASE_URL}/conversations/`,
+//   },
+// };
+
+const BASE_URL = "https://badospace.onrender.com/api";
 
 export default {
   BASE_URL,
@@ -37,4 +47,3 @@ export default {
     CONVERSATIONS: `${BASE_URL}/conversations/`,
   },
 };
-
