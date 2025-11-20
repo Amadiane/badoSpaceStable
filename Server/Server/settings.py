@@ -114,6 +114,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8081",
     "http://192.168.1.189:8081",  # ton mobile sur le même 
     "https://badospace.onrender.com",
+    "https://badospace.vercel.app",
 ]
 
 
