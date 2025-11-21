@@ -18,15 +18,11 @@
 // };
 
 
-
-// config.ts
-
-// 🔍 Détecter si on est en local (PC ou mobile)
+// 🔍 Local uniquement si hostname = localhost OU 127.0.0.1
 const isLocal =
   typeof window !== "undefined" &&
   (window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1" ||
-    window.location.hostname.startsWith("192.168."));
+    window.location.hostname === "127.0.0.1");
 
 // 🖥️ Backend local
 const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
@@ -34,7 +30,7 @@ const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
 // 🌍 Backend production (Render)
 const PROD_BASE_URL = "https://badospace.onrender.com/api";
 
-// ✔️ Sélection automatique (AUCUNE variable DEV)
+// ✔️ Toujours PROD en HTTPS sauf localhost
 export const BASE_URL = isLocal ? LOCAL_BASE_URL : PROD_BASE_URL;
 
 export default {
