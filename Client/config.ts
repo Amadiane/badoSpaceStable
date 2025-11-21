@@ -17,21 +17,19 @@
 //   },
 // };
 
+// config.ts
 
-// 🔍 Local uniquement si hostname = localhost OU 127.0.0.1
-const isLocal =
-  typeof window !== "undefined" &&
-  (window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1");
+// 🚨 Toujours à false sur Vercel
+const LOCAL = false;
 
-// 🖥️ Backend local
+// 🖥️ Backend local (PC)
 const LOCAL_BASE_URL = "http://192.168.1.189:8000/api";
 
 // 🌍 Backend production (Render)
 const PROD_BASE_URL = "https://badospace.onrender.com/api";
 
-// ✔️ Toujours PROD en HTTPS sauf localhost
-export const BASE_URL = isLocal ? LOCAL_BASE_URL : PROD_BASE_URL;
+// ✔️ Utilisation finale
+export const BASE_URL = LOCAL ? LOCAL_BASE_URL : PROD_BASE_URL;
 
 export default {
   BASE_URL,
